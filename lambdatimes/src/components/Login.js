@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header';
 import styled from 'styled-components';
 
 const StylesLoginPage = styled.div`
@@ -13,7 +12,7 @@ const StylesLoginPage = styled.div`
         border: 3px solid #000;
         border-radius: 5px;
         box-shadow: 1px 1px 10px #000;
-        margin: 50px auto 0;
+        margin: 100px auto 0;
 
         section {
             margin-bottom: 20px;
@@ -53,7 +52,6 @@ const StylesLoginPage = styled.div`
 function LoginPage(props) {
     return(
         <StylesLoginPage>
-            <Header/>
             <main>
                 <section>
                     <input
