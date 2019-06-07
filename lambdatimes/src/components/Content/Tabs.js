@@ -1,5 +1,7 @@
 import React from 'react';
 import Tab from './Tab';
+import uuid from 'uuid';
+
 const Tabs = props => {
   return (
     <div className="tabs">
@@ -11,6 +13,7 @@ const Tabs = props => {
             props.tabs.map(tab => {
               return (
                 <Tab 
+                  key={uuid()}
                   selectTabHandler={props.selectedTabHandler}
                   selectedTab={props.selectedTab}
                   tab={tab}
