@@ -1,12 +1,59 @@
 import React from 'react';
-import TopBar from './TopBar';
 import Header from './Header';
+import styled from 'styled-components';
 
-function LoginPage() {
+const StylesLoginPage = styled.div`
+    main {
+        display: ${props => props.displayLogIn || 'flex'};
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        border: 3px solid #000;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px #000;
+        margin: 50px auto 0;
+
+        section {
+            margin-bottom: 20px;
+
+            input {
+                width: 200px;
+                height: 30px;
+                font-size: 1rem;
+                border: 3px solid #000;
+                border-radius: 5px;
+                outline: 0;
+
+                &:valid {
+                    border: 3px solid #f00;
+                }
+
+                &:invalid {
+                    border: 3px solid #0f0;
+                }
+            }
+        }
+
+        button {
+            padding: 5px 30px;
+            border: 3px solid #000;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+`;
+
+function LoginPage(props) {
     return(
-        <div>
-            <TopBar className="TobBar"/>
-            <Header />
+        <StylesLoginPage>
+            <Header/>
             <main>
                 <section>
                     <input
@@ -18,9 +65,9 @@ function LoginPage() {
                         type="password"
                         placeholder="Password"/>
                 </section>
-                <button>Login</button>
+                <button onClick={props.clicked}>Login</button>
             </main>
-        </div>
+        </StylesLoginPage>
     );
 }
 
