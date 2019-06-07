@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import TopBar from './components/TopBar';
-import Header from './components/Header';
-import Content from './components/Content/Content';
+import React from 'react';
+import withAuthentication from './components/authentication/authentication';
+import LoginPage from './components/Login';
+import AppContainer from './AppContainer'
+
+const Authenticated = withAuthentication(AppContainer)(LoginPage);
 
 const App = () => {
   return (
-    <div className="App">
-      <TopBar />
-      <Header />
-      <Content />
-    </div>
+    <Authenticated />
   );
 }
 
