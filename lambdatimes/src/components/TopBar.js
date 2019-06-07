@@ -10,6 +10,8 @@ const StylesTopBar = styled.div`
     position: fixed;
     height: 44px;
     background-color: #333;
+    padding-left: 10px;
+    padding-right: 10px;
 
     & header {
       width: 100%;

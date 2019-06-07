@@ -26,11 +26,11 @@ const StylesLoginPage = styled.div`
                 outline: 0;
 
                 &:valid {
-                    border: 3px solid #f00;
+                    border: 3px solid #0f0;
                 }
 
                 &:invalid {
-                    border: 3px solid #0f0;
+                    border: 3px solid #f00;
                 }
             }
         }
@@ -56,12 +56,16 @@ function LoginPage(props) {
                 <section>
                     <input
                         type="text"
-                        placeholder="Username"/>
+                        placeholder="Username"
+                        pattern=".{3,10}" 
+                        required title="3 to 10 characters"/>
                 </section>
                 <section>
                     <input
                         type="password"
-                        placeholder="Password"/>
+                        placeholder="Password"
+                        pattern=".{8,12}" 
+                        required title="8 to 12 characters"/>
                 </section>
                 <button onClick={props.clicked}>Login</button>
             </main>
